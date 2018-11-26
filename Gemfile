@@ -27,6 +27,18 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'devise-bootstrap-views', '~> 1.0'
+gem 'devise'
+gem 'simple_form'
+# Rails view helper for grabbing Gravatar images
+gem 'gravatar_image_tag'
+#This gem provides a simple and extremely flexible way to upload files from Ruby applications
+gem 'carrierwave'
+# A ruby wrapper for ImageMagick or GraphicsMagick command line.
+gem 'mini_magick'
+# CSS framework based on Flexbox
+gem 'bulma-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -48,6 +60,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'better_errors'
+  gem 'guard'
+  gem 'guard-livereload'
+
 end
 
 group :test do
