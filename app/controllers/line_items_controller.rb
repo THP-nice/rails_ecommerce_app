@@ -2,6 +2,8 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_line_item, only: [:show, :update, :destroy]
   before_action :set_cart, only: [:create]
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
+  before_action :admin_user, only: [:index]
 
   # GET /line_items
   def index
@@ -62,5 +64,10 @@ class LineItemsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def line_item_params
       params.require(:line_item).permit(:item_id, :cart_id)
+    end
+
+    def admin_user
+      redirect_to(root_path) unless current_user && current_user.admin?
+      flash[:alert] = "Nope"
     end
 end

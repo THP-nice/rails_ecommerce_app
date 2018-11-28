@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :show]
+  before_action :admin_user, only: [:index]
 
   # GET /carts
   def index
@@ -64,6 +66,11 @@ class CartsController < ApplicationController
     def invalid_cart
       logger.error "Invalid cart #{params[:id]}"
       redirect_to root_path, notice: "Doesn't exist."
+    end
+
+    def admin_user
+      redirect_to(root_path) unless current_user && current_user.admin?
+      flash[:alert] = "Nope"
     end
 
 end
