@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
   resources :line_items, except: [:edit]
-  resources :carts, except: [:edit]
+  resources :carts, path: :mycart, except: [:edit, :new]
   resources :items
 end
