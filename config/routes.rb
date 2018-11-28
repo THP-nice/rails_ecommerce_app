@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'registrations'
   }
   resources :line_items, except: [:edit]
-  resources :carts, path: :cart, except: [:edit]
+  resources :carts, path: :mycart, except: [:edit, :new]
   resources :items
   resources :charges
 end

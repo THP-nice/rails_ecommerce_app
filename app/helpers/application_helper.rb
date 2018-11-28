@@ -2,8 +2,8 @@ module ApplicationHelper
 
     def cart_has_items
       unless current_user == nil
-      total = @cart.line_items.map { |item| item.quantity }.sum
-      return total if total > 0
+        total = @cart.line_items.map { |item| item.quantity }.sum
+        return total if total > 0
       end
     end
 

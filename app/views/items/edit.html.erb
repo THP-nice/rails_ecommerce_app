@@ -1,9 +1,9 @@
-<% if current_user && current_user.admin %>
-  <h1>Editing Item</h1>
+<% content_for :title do %>
+  Kitten | Edit Item
+<% end %>
+<h1>Editing Item</h1>
 
-  <%= render 'form', item: @item %>
+<%= render 'form', item: @item %>
 
-  <%= link_to 'Show', @item %> |
-  <%= link_to 'Back', items_path %>
-
-<%end%>
+<%= link_to 'Show', @item %> |
+<%= link_to 'Back', items_path %>
