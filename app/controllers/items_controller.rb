@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :admin_user, only: [:new, :edit]
 
   # GET /items
   def index
@@ -69,6 +70,11 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:title, :description, :price, :image)
+    end
+
+    def admin_user
+      redirect_to(root_path) unless current_user && current_user.admin?
+      flash[:alert] = "Nope"
     end
 
 end
