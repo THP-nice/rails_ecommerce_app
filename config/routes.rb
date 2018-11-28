@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :line_items, except: [:edit]
   resources :carts, path: :cart, except: [:edit]
   resources :items
+  resources :charges
 end
