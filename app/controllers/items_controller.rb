@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     if current_user && current_user.admin
+      @item = Item.find(params[:id])
     else
       redirect_to root_path
     end
@@ -81,8 +82,10 @@ class ItemsController < ApplicationController
     end
 
     def admin_user
-      redirect_to(root_path) unless current_user && current_user.admin?
-      flash[:alert] = "Nope"
+      unless current_user && current_user.admin?
+        redirect_to(root_path)
+        flash[:alert] = "Nope"
+      end
     end
 
 end
