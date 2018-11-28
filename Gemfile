@@ -27,8 +27,13 @@ gem 'turbolinks', '~> 5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Stripe
+gem 'stripe'
+
+# Devise
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise'
+
 gem 'simple_form'
 # Rails view helper for grabbing Gravatar images
 gem 'gravatar_image_tag'
@@ -37,10 +42,10 @@ gem 'carrierwave'
 # CSS framework based on Flexbox
 gem 'bulma-rails'
 
+# Active Storage
+gem 'azure-storage', require: false
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-
-gem 'azure-storage', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
