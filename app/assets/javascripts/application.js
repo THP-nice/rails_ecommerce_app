@@ -14,3 +14,13 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// Flash limité à 3 secondes
+document.addEventListener("turbolinks:load", function(){
+  var notification = document.querySelector(".global-notification");
+  if(notification) {
+    window.setTimeout(function() {
+      notification.style.display = "none";
+    }, 3000);
+  }
+});
