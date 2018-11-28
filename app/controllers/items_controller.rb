@@ -14,11 +14,19 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    if current_user && current_user.admin
+      @item = Item.new
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /items/1/edit
   def edit
+    if current_user && current_user.admin
+    else
+      redirect_to root_path
+    end
   end
 
   # POST /items

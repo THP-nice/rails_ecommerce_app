@@ -3,10 +3,10 @@ module CurrentCart
   private
 
   def set_cart
-    @cart = Cart.find(session[:cart_id])
-  rescue ActiveRecord::RecordNotFound
-    @cart = Cart.create
-    session[:cart_id] = @cart.id
+    unless curren_user == nil
+      @cart = curren_user.cart || curren_user.create_cart
+      session[:cart_id] = @cart.id
+    end
   end
 
 end
