@@ -16,9 +16,15 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @item.image %>
+  <% if @item.image.attached? %>
+  <!-- @post.image.present? will always return true, use attached? to check presence -->
+  <strong>Image :</strong>
+  <%= image_tag @item.image %>
+  <% end %>
 </p>
 
+<% if current_user && current_user.admin %>
 <%= link_to 'Edit', edit_item_path(@item) %> |
+<%end%>
+<%= button_to 'Add', line_items_path(item_id: @item) %> |
 <%= link_to 'Back', items_path %>

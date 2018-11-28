@@ -19,15 +19,21 @@
         <td><%= item.title %></td>
         <td><%= item.description %></td>
         <td><%= item.price %></td>
-        <td><%= item.image %></td>
+        <% if item.image.attached? %>
+        <td><%= image_tag item.image %></td>
+        <%end%>
         <td><%= link_to 'Show', item %></td>
+        <% if current_user && current_user.admin %>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+  <% if current_user && current_user.admin %>
+  <%= link_to 'New Item', new_item_path %>
+  <%end%>

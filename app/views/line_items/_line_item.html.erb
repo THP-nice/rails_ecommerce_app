@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <%= line_item.quantity %>
+  </div>
+  <div>
+    <% if line_item.item.image.attached? %>
+    <!-- @post.image.present? will always return true, use attached? to check presence -->
+    <%= image_tag line_item.item.image %>
+    <% end %>
+  </div>
+  <div>
+    <%= line_item.item.title %>
+  </div>
+  <div>
+    <%= truncate(line_item.item.description, length: 100) %>
+  </div>
+  <div>
+    <%= number_to_currency(line_item.total_price) %>
+  </div>
+
+<div>
+<%= link_to 'Remove le kitten', line_item, method: :delete, data: { confirm: "Sure ?"} %>
+</div>
+
+<hr/>

@@ -1,0 +1,16 @@
+<section>
+<hr/>
+<%= render(@cart.line_items) %>
+<div class="columns">
+  <div class="column">
+    <%= button_to 'Empty cart de kitten', @cart, method: :delete, data: { confirm: "Sure ?" }, class: "button is-danger" %>
+  </div>
+  <div class="column total">
+    <h4>
+      <span>Total :</span> <%= number_to_currency(@cart.total_price)%>
+    </h4>
+  </div>
+</section>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Keep shopping du kitten', items_path %> |
