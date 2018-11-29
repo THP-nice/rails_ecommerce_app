@@ -6,21 +6,13 @@
       </div>
     <% end %>
     <label class="amount">
-<<<<<<< HEAD:app/views/charges/new.html.erb
-      <span>Total : <%= @cart.total_price %> $</span>
-=======
       <span>Amount: <%= @line_item.total_price %></span>
->>>>>>> developpment:app/views/charges/_new.html.erb
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Cart"
-<<<<<<< HEAD:app/views/charges/new.html.erb
-          data-amount="<%= @cart.total_price * 100 %>"
-=======
           data-amount="<%= (@line_item.total_price)*100 %>"
->>>>>>> developpment:app/views/charges/_new.html.erb
           data-locale="auto"></script>
 <% end %>
