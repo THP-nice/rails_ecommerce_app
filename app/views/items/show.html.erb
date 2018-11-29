@@ -26,130 +26,72 @@
 
                 <!-- Product Single - Gallery
                 ============================================= -->
-                <div class="product-image">
-                  <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
-                    <div class="flexslider">
-                      <div class="slider-wrap" data-lightbox="gallery">
-                        <%= image_tag @item.image %>
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- Product Single - Gallery End -->
-
+                <%= image_tag @item.image %>
               </div>
 
               <div class="col_two_fifth product-desc">
 
-                <!-- Product Single - Price
-                ============================================= -->
-                <div class="product-price"><del>$39.99</del> <ins>$24.99</ins></div><!-- Product Single - Price End -->
-
-                <!-- Product Single - Rating
-                ============================================= -->
+                <div class="product-price"><%= @item.price %>$</div>
                 <div class="product-rating">
                   <i class="icon-star3"></i>
                   <i class="icon-star3"></i>
                   <i class="icon-star3"></i>
                   <i class="icon-star-half-full"></i>
                   <i class="icon-star-empty"></i>
-                </div><!-- Product Single - Rating End -->
-
+                </div>
+                
                 <div class="clear"></div>
                 <div class="line"></div>
 
-                <!-- Product Single - Quantity & Cart Button
-                ============================================= -->
-                <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
-                  <div class="quantity clearfix">
-                    <input type="button" value="-" class="minus">
-                    <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
-                    <input type="button" value="+" class="plus">
-                  </div>
-                  <button type="submit" class="add-to-cart button nomargin">Add to cart</button>
-                </form><!-- Product Single - Quantity & Cart Button End -->
-
+                <%= button_to 'Add to cart', line_items_path(item_id: @item), {form_class: 'cart nobottommargin clearfix', class: 'add-to-cart button nomargin'} %>
                 <div class="clear"></div>
                 <div class="line"></div>
-
-                <!-- Product Single - Short Description
-                ============================================= -->
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex quae laboriosam nulla optio doloribus! Perspiciatis, libero, neque, perferendis at nisi optio dolor!</p>
-                <p>Perspiciatis ad eveniet ea quasi debitis quos laborum eum reprehenderit eaque explicabo assumenda rem modi.</p>
-                <ul class="iconlist">
-                  <li><i class="icon-caret-right"></i> Dynamic Color Options</li>
-                  <li><i class="icon-caret-right"></i> Lots of Size Options</li>
-                  <li><i class="icon-caret-right"></i> 30-Day Return Policy</li>
-                </ul><!-- Product Single - Short Description End -->
-
-                <!-- Product Single - Meta
-                ============================================= -->
-                <div class="card product-meta">
-                  <div class="card-body">
-                    <span itemprop="productID" class="sku_wrapper">SKU: <span class="sku">8465415</span></span>
-                    <span class="posted_in">Category: <a href="#" rel="tag">Dress</a>.</span>
-                    <span class="tagged_as">Tags: <a href="#" rel="tag">Pink</a>, <a href="#" rel="tag">Short</a>, <a href="#" rel="tag">Dress</a>, <a href="#" rel="tag">Printed</a>.</span>
-                  </div>
-                </div><!-- Product Single - Meta End -->
-
-                <!-- Product Single - Share
-                ============================================= -->
-                <div class="si-share noborder clearfix">
-                  <span>Share:</span>
-                  <div>
-                    <a href="#" class="social-icon si-borderless si-facebook">
-                      <i class="icon-facebook"></i>
-                      <i class="icon-facebook"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-twitter">
-                      <i class="icon-twitter"></i>
-                      <i class="icon-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-pinterest">
-                      <i class="icon-pinterest"></i>
-                      <i class="icon-pinterest"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-gplus">
-                      <i class="icon-gplus"></i>
-                      <i class="icon-gplus"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-rss">
-                      <i class="icon-rss"></i>
-                      <i class="icon-rss"></i>
-                    </a>
-                    <a href="#" class="social-icon si-borderless si-email3">
-                      <i class="icon-email3"></i>
-                      <i class="icon-email3"></i>
-                    </a>
-                  </div>
-                </div><!-- Product Single - Share End -->
+                <p>Description: <%= @item.description %></p>
               </div>
-     
+              <div class="col_one_fifth col_last">
+                <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
 
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-thumbs-up2"></i>
+                  </div>
+                  <h3>100% Original</h3>
+                  <p class="notopmargin">We guarantee you the sale of Original Brands.</p>
+                </div>
 
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-credit-cards"></i>
+                  </div>
+                  <h3>Payment Options</h3>
+                  <p class="notopmargin">We accept Visa, MasterCard and American Express.</p>
+                </div>
 
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-truck2"></i>
+                  </div>
+                  <h3>Free Shipping</h3>
+                  <p class="notopmargin">Free Delivery to 100+ Locations on orders above $40.</p>
+                </div>
 
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-undo"></i>
+                  </div>
+                  <h3>30-Days Returns</h3>
+                  <p class="notopmargin">Return or exchange items purchased within 30 days.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+    <div class="admin-buttons">
+        <% if current_user && current_user.admin %>
+        <%= link_to 'Edit', edit_item_path(@item) %> |
+        <%end%>
+    </div>    
 
+        <%= link_to 'Back', items_path %>   
 
-
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<p>
-  <!-- @post.image.present? will always return true, use attached? to check presence -->
-  <strong>Image :</strong>
-  <%= image_tag @item.image %>
-</p>
-
-<% if current_user && current_user.admin %>
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%end%>
-<%= button_to 'Add', line_items_path(item_id: @item) %> |
-<%= link_to 'Back', items_path %>
