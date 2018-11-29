@@ -26,7 +26,8 @@
 
                 <!-- Product Single - Gallery
                 ============================================= -->
-                <% if @item.image.atached? %>
+
+                <% if @item.image.attached? %>
                   <%= image_tag @item.image %>
                 <% end %>
               </div>

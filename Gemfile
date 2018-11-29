@@ -43,6 +43,7 @@ gem 'gravatar_image_tag'
 gem 'carrierwave'
 # CSS framework based on Flexbox
 gem 'bulma-rails'
+gem 'faker'
 
 # Active Storage
 gem 'azure-storage', require: false
