@@ -47,7 +47,6 @@ class CartsController < ApplicationController
       format.html { redirect_to root_path, notice: 'Cart was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to root_path
   end
 
   private
