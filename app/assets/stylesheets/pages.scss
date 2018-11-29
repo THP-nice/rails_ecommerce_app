@@ -42,7 +42,7 @@
     #team .card
     {
         border: none;
-        background: #ffffff;
+        background: white;
     }
 
     .image-flip:hover .backside,
@@ -146,4 +146,8 @@
                 width: 120px;
                 height: 120px;
                 border-radius: 50%;
+            }
+
+            .partners {
+              color: #00d1b2;
             }
