@@ -24,7 +24,6 @@
           <li><%= link_to "Shop", pages_shop_path %></li>
           <li><%= link_to "About", pages_about_path %></li>
           <li><%= link_to "Contact", pages_contact_path %></li>
-          <li><%= link_to "Customer reviews", pages_customer_reviews_path %></li>
         </ul>
 
         <!-- Top Search
@@ -39,38 +38,13 @@
         <!-- Top Cart
         ============================================= -->
         <div id="top-cart">
-          <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span>5</span></a>
-          <div class="top-cart-content">
-            <div class="top-cart-title">
-              <h4>Shopping Cart</h4>
-            </div>
-            <div class="top-cart-items">
-              <div class="top-cart-item clearfix">
-                <div class="top-cart-item-image">
-                  <a href="#"><%= image_tag 'items/featured/5.jpg', alt: 'Blue Shoulder Bag' %></a>
-                </div>
-                <div class="top-cart-item-desc">
-                  <a href="#" class="t400">White athletic shoe</a>
-                  <span class="top-cart-item-price">$35.00</span>
-                  <span class="top-cart-item-quantity t600">x 1</span>
-                </div>
-              </div>
-              <div class="top-cart-item clearfix">
-                <div class="top-cart-item-image">
-                  <a href="#" class="t400"><%= image_tag 'items/featured/1.jpg', alt: 'Leather Bag' %></a>
-                </div>
-                <div class="top-cart-item-desc">
-                  <a href="#" class="t400">Round Neck Solid Light Blue Colour T-shirts</a>
-                  <span class="top-cart-item-price">$12.49</span>
-                  <span class="top-cart-item-quantity t600">x 2</span>
-                </div>
-              </div>
-            </div>
-            <div class="top-cart-action clearfix">
-              <span class="fleft top-checkout-price t600 text-dark">$59.98</span>
-              <button class="button button-dark button-small nomargin fright">View Cart</button>
-            </div>
-          </div>
+          <% if cart_has_items %>
+            <%= link_to cart_path(@cart), class:"top-cart-trigger" do %>
+              <i class="icon-line-bag"></i><span><%= cart_count_over_one %></span></a>
+            <% end %>
+          <% else %>
+            <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span>0</span></a>
+          <% end %>
         </div><!-- #top-cart end -->
 
         <!-- Top Search
