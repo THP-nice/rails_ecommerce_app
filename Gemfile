@@ -30,6 +30,9 @@ gem 'turbolinks', '~> 5'
 # Stripe
 gem 'stripe'
 
+# Mailer
+gem 'mailjet'
+
 # Devise
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise'
