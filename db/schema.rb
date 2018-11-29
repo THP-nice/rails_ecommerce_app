@@ -55,11 +55,13 @@ ActiveRecord::Schema.define(version: 2018_11_27_161155) do
   create_table "line_items", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "cart_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity", default: 1
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
     t.index ["item_id"], name: "index_line_items_on_item_id"
+    t.index ["user_id"], name: "index_line_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,4 +81,5 @@ ActiveRecord::Schema.define(version: 2018_11_27_161155) do
   add_foreign_key "carts", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "items"
+  add_foreign_key "line_items", "users"
 end
