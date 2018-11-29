@@ -21,7 +21,7 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
-    UserMailer.welcome_email(@user).deliver_now
+    UserMailer.welcome_email(current_user).deliver_now
     AdminMailer.confirm_email.deliver_now
     @cart = current_user.cart
     @cart.destroy
