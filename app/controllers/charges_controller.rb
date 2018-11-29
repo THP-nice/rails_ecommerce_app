@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user])
+    @user = current_user
     @line_item = current_user.cart
     # Amount in cents
     @amount = (@line_item.total_price)*100
@@ -22,6 +22,7 @@ class ChargesController < ApplicationController
     )
 
     UserMailer.welcome_email(@user).deliver_now
+    AdminMailer.confirm_email.deliver_now
     @cart = current_user.cart
     @cart.destroy
     flash[:notice] = "Your money is my money"
