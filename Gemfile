@@ -33,7 +33,7 @@ gem 'stripe'
 # Devise
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise'
-
+gem 'activeadmin', '~> 1.4.2'
 gem 'simple_form'
 # Rails view helper for grabbing Gravatar images
 gem 'gravatar_image_tag'
