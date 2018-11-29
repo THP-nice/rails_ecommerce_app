@@ -12,8 +12,9 @@
   <tbody>
     <% @line_items.each do |line_item| %>
       <tr>
-        <td><%= line_item.item %></td>
-        <td><%= line_item.cart %></td>
+        <td><%= line_item.item.title %></td>
+        <td><%= line_item.item.description %></td>
+        <td><%= line_item.cart.total_price %></td>
         <td><%= link_to 'Show', line_item %></td>
         <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

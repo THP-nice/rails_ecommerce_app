@@ -1,14 +1,12 @@
 <% content_for :title do %>
 My cart
 <% end %>
-<p>
-  <strong>Item:</strong>
-  <%= @line_item.item %>
-</p>
 
-<p>
-  <strong>Cart:</strong>
-  <%= @line_item.cart %>
-</p>
+<% if current_user.id == @line_item.cart.user_id %>
+
+<%= render(@line_item) %>
+<%= render :partial => 'charges/new' %>
 
 <%= link_to 'Back', line_items_path %>
+<%else%>
+<%end%>
