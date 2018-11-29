@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   include CurrentCart
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
-  before_action :set_cart, only: [:show, :update, :destroy]
+  before_action :current_cart, only: [:show, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :show]
   before_action :admin_user, only: [:index]
 
@@ -17,10 +17,6 @@ class CartsController < ApplicationController
   # GET /carts/new
   def new
     @cart = Cart.new
-  end
-
-  # GET /carts/1/edit
-  def edit
   end
 
   # POST /carts
