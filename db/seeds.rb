@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do
+require 'faker'
+
+26.times do
   Item.create(
     title:Faker::Cat.breed,
-    description:Faker::Cat.name,
+    description:Faker::Lorem.paragraph(10),
     price:Faker::Number.number(2),
-    )
+  )
 end
