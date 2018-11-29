@@ -26,12 +26,14 @@
 
                 <!-- Product Single - Gallery
                 ============================================= -->
-                <%= image_tag @item.image %>
+                <% if @item.image.atached? %>
+                  <%= image_tag @item.image %>
+                <% end %>
               </div>
 
               <div class="col_two_fifth product-desc">
 
-                <div class="product-price"><%= @item.price %>$</div>
+                <div class="product-price">$<%= @item.price %>0</div>
                 <div class="product-rating">
                   <i class="icon-star3"></i>
                   <i class="icon-star3"></i>
@@ -46,7 +48,7 @@
                 <%= button_to 'Add to cart', line_items_path(item_id: @item), {form_class: 'cart nobottommargin clearfix', class: 'add-to-cart button nomargin'} %>
                 <div class="clear"></div>
                 <div class="line"></div>
-                <p>Description: <%= @item.description %></p>
+                <p><strong>Description</strong> <br><%= @item.description %></p>
               </div>
               <div class="col_one_fifth col_last">
                 <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
@@ -56,7 +58,7 @@
                     <i class="icon-thumbs-up2"></i>
                   </div>
                   <h3>100% Original</h3>
-                  <p class="notopmargin">We guarantee you the sale of Original Brands.</p>
+                  <p class="notopmargin">We guarantee you genuine cats from our Premium selection.</p>
                 </div>
 
                 <div class="feature-box fbox-plain fbox-dark fbox-small">
@@ -64,15 +66,15 @@
                     <i class="icon-credit-cards"></i>
                   </div>
                   <h3>Payment Options</h3>
-                  <p class="notopmargin">We accept Visa, MasterCard and American Express.</p>
+                  <p class="notopmargin">Pay with our ultra secured Stripe payment module.</p>
                 </div>
 
                 <div class="feature-box fbox-plain fbox-dark fbox-small">
                   <div class="fbox-icon">
                     <i class="icon-truck2"></i>
                   </div>
-                  <h3>Free Shipping</h3>
-                  <p class="notopmargin">Free Delivery to 100+ Locations on orders above $40.</p>
+                  <h3>Free & Fast Shipping</h3>
+                  <p class="notopmargin">Free Delivery to more than 100 Countries on orders above $40.</p>
                 </div>
 
                 <div class="feature-box fbox-plain fbox-dark fbox-small">
@@ -80,7 +82,7 @@
                     <i class="icon-undo"></i>
                   </div>
                   <h3>30-Days Returns</h3>
-                  <p class="notopmargin">Return or exchange items purchased within 30 days.</p>
+                  <p class="notopmargin">You do not like your cat ? Don't worry, you can send it back within 30 days.</p>
                 </div>
             </div>
           </div>
@@ -93,5 +95,5 @@
         <%end%>
     </div>    
 
-        <%= link_to 'Back', items_path %>   
+     
 
