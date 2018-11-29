@@ -19,8 +19,28 @@
 
  @import "bulma";
  @import "functions";
+ @import "template/bootstrap";
+ @import "template/style";
+ @import "template/dark";
+ @import "template/swiper";
+ @import "template/shop";
+ @import "template/fonts";
+ @import "template/font-icons";
+ @import "template/animate";
+ @import "template/magnific-popup";
+ @import "template/responsive";
+ @import "template/colors";
 
- .notification {
+
+.card {
+  box-shadow: none;
+}
+
+.navbar-link {
+  padding: 0;
+}
+
+.notification {
   border-radius: 0;
 }
 

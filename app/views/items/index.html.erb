@@ -1,6 +1,667 @@
 <% content_for :title do %>
-  Kitten
+  Home | Meowy, Inc.
 <% end %>
+
+<!-- Slider
+============================================= -->
+<section id="slider" class="slider-element swiper_wrapper clearfix" data-autoplay="4500" data-speed="800" data-loop="true" data-grab="true" data-effect="slide" data-arrow="false">
+
+  <div class="swiper-container swiper-parent">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide dark" style="background-image: url('/assets/slider/1.png');">
+        <div class="container clearfix">
+          <div class="slider-caption slider-caption-center">
+            <div class="h5 mb-2 font-secondary">Get a littke kitten for Christmas</div>
+            <h2 class="bottommargin-sm text-white">Winter / 2018</h2>
+            <a href="#" class="button bg-white text-dark button-light">Shop Cats</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide dark" style="background: url('/assets/slider/2.png') no-repeat center 40%; background-size: cover">
+        <div class="container clearfix">
+          <div class="slider-caption slider-caption-center">
+            <h2 class="bottommargin-sm text-white">Winter Sale</h2>
+            <a href="#" class="button bg-white text-dark button-light">Shop Cats</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+</section><!-- #Slider End -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+  <div class="content-wrap">
+
+    <div class="container clearfix">
+
+      <!-- Featured Carousel
+      ============================================= -->
+      <div class="fancy-title title-dotted-border mt-4 mb-1 title-center">
+        <h4>Weekly Featured Items</h4>
+      </div>
+
+      <div id="oc-products" class="owl-carousel products-carousel carousel-widget" data-margin="20" data-loop="true" data-autoplay="5000" data-nav="true" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4" data-items-xl="5">
+
+        <!-- Shop Item 1
+        ============================================= -->
+        <div class="oc-item">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/featured/1.jpg', alt: 'Round Neck T-shirts' %></a>
+              <a href="#"><%= image_tag 'items/featured/1-1.jpg', alt: 'Round Neck T-shirts' %></a>
+              <div class="sale-flash">Sale!</div>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Round Neck Solid Light Blue Colour T-shirts</a></h3></div>
+              <div class="product-price font-primary"><del class="mr-1">$24.99</del> <ins>$12.49</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 2
+        ============================================= -->
+        <div class="oc-item">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/featured/2.jpg', alt: 'Navy Blue Dress' %></a>
+              <a href="#"><%= image_tag 'items/featured/2-1.jpg', alt: 'Navy Blue Dress' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Navy Blue Dress For Women</a></h3></div>
+              <div class="product-price font-primary"><ins>$19.99</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 3
+        ============================================= -->
+        <div class="oc-item">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/featured/5.jpg', alt: 'Shoes' %></a>
+              <a href="#"><%= image_tag 'items/featured/5-1.jpg', alt: 'Shoes' %></a>
+              <div class="product-overlay">
+                <a href="demos/shop/ajax/shop-item-no-stock.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="sale-flash bg-danger">Out of Stock!</div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">White athletic shoe</a></h3></div>
+              <div class="product-price font-primary"><ins>$35.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 4
+        ============================================= -->
+        <div class="oc-item">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <div class="fslider" data-arrows="false" data-autoplay="4500">
+                <div class="flexslider">
+                  <div class="slider-wrap">
+                    <div class="slide"><a href="#"><%= image_tag 'items/featured/4.jpg', alt: 'T-shirts' %></a></div>
+                    <div class="slide"><a href="#"><%= image_tag 'items/featured/4-1.jpg', alt: 'T-shirts' %></a></div>
+                    <div class="slide"><a href="#"><%= image_tag 'items/featured/4-2.jpg', alt: 'T-shirts' %></a></div>
+                    <div class="slide"><a href="#"><%= image_tag 'items/featured/4-3.jpg', alt: 'T-shirts' %></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="sale-flash">Sale!</div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Navy blue T-shirt, Round neck, Short Sleeves</a></h3></div>
+              <div class="product-price font-primary"><del class="mr-1">$27.99</del> <ins>$21.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-empty"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 5
+        ============================================= -->
+        <div class="oc-item">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/featured/3.jpg', alt: 'T-shirts' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Women Black T-Shirt</a></h3></div>
+              <div class="product-price font-primary"><ins>$13.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <!-- New Arrivals Men
+    ============================================= -->
+    <div class="container clearfix">
+
+      <div class="fancy-title title-dotted-border topmargin-sm mb-4 title-center">
+        <h4>New Arrivals: Men</h4>
+      </div>
+
+      <div class="row grid-6">
+
+        <!-- Shop Item 1
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/1.jpg', alt: 'Image 1' %></a>
+              <a href="#"><%= image_tag 'items/new/1-1.jpg', alt: 'Image 1' %></a>
+              <div class="sale-flash">Sale!</div>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Light Blue Denim</a></h3></div>
+              <div class="product-price font-primary"><del class="mr-1">$24.99</del> <ins>$12.49</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 2
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/2.jpg', alt: 'Image 2' %></a>
+              <a href="#"><%= image_tag 'items/new/2-1.jpg', alt: 'Image 2' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Deep Blue Sport Shoe</a></h3></div>
+              <div class="product-price font-primary"><ins>$19.99</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 3
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/4.jpg', alt: 'Image 3' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="sale-flash">Sale!</div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Printed Men Short</a></h3></div>
+              <div class="product-price font-primary"><del class="mr-1">$41.99</del> <ins>$35.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-empty"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 4
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <div class="fslider" data-arrows="false" data-autoplay="4500">
+                <div class="flexslider">
+                  <div class="slider-wrap">
+                    <div class="slide"><a href="#"><%= image_tag 'items/new/3.jpg', alt: 'Image 4' %></a></div>
+                    <div class="slide"><a href="#"><%= image_tag 'items/new/3-1.jpg', alt: 'Image 4' %></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Women Sportd Track Pant</a></h3></div>
+              <div class="product-price font-primary"><ins>$21.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 5
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/6.jpg', alt: 'Image 5' %></a>
+              <a href="#"><%= image_tag 'items/new/6-1.jpg', alt: 'Image 5' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Cool Printed Dress</a></h3></div>
+              <div class="product-price font-primary"><ins>$31.49</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 6
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/5.jpg', alt: 'Image 6' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="sale-flash">Sale!</div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Red Stripe Girls Top</a></h3></div>
+              <div class="product-price font-primary"><del class="mr-1">$41.99</del> <ins>$35.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 7
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/7.jpg', alt: 'Image 7' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Dark Brown Lady Bag for Women</a></h3></div>
+              <div class="product-price font-primary"><ins>$49.49</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 8
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/8.jpg', alt: 'Image 8' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">UV Poection Sunglass</a></h3></div>
+              <div class="product-price font-primary"><ins>$39.99</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 9
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/9.jpg', alt: 'Image 9' %></a>
+              <a href="#"><%= image_tag 'items/new/9-1.jpg', alt: 'Image 3' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="sale-flash">Sale!</div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Workout Sweat T-shirt</a></h3></div>
+              <div class="product-price font-primary"><del class="mr-1">$21.99</del> <ins>$15.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-empty"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 10
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/10.jpg', alt: 'Image 10' %></a>
+              <div class="product-overlay">
+                <a href="demos/shop/ajax/shop-item-no-stock.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="sale-flash bg-danger">Out of Stock!</div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Sky Blue Printed Bag</a></h3></div>
+              <div class="product-price font-primary"><ins>$61.49</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 11
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <div class="fslider" data-arrows="false" data-autoplay="4500">
+                <div class="flexslider">
+                  <div class="slider-wrap">
+                    <div class="slide"><a href="#"><%= image_tag 'items/new/11.jpg', alt: 'Image 10' %></a></div>
+                    <div class="slide"><a href="#"><%= image_tag 'items/new/11-1.jpg', alt: 'Image 10' %></a></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Blue Women Watch</a></h3></div>
+              <div class="product-price font-primary"><ins>$23.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star-half-full"></i>
+                <i class="icon-star-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Item 12
+        ============================================= -->
+        <div class="col-lg-2 col-md-3 col-6 px-2">
+          <div class="product iproduct clearfix">
+            <div class="product-image">
+              <a href="#"><%= image_tag 'items/new/12.jpg', alt: 'Image 6' %></a>
+              <div class="product-overlay">
+                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                <a href="demos/shop/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-line-search"></i><span>Quick View</span></a>
+              </div>
+            </div>
+            <div class="product-desc">
+              <div class="product-title mb-1"><h3><a href="#">Blue Party Shoe</a></h3></div>
+              <div class="product-price font-primary"><ins>$51.00</ins></div>
+              <div class="product-rating">
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+                <i class="icon-star3"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Sign Up
+    ============================================= -->
+    <div class="section my-4 py-5 clearfix">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row common-height align-items-center clearfix">
+              <div class="col-md-7" style="background: url('/assets/sections/meowysignup.png') center center no-repeat; background-size: cover; height:100%">
+              </div>
+              <div class="col-md-5 bg-white">
+                <div class="card noborder py-2">
+                  <div class="card-body">
+                    <h3 class="card-title mb-4 ls0">Sign up to get the most out of shopping.</h3>
+                    <ul class="iconlist ml-3">
+                      <li><i class="icon-circle-blank text-black-50"></i> Receive Exclusive Sale Alerts</li>
+                      <li><i class="icon-circle-blank text-black-50"></i> 30 Days Return Policy</li>
+                    </ul>
+                    <a href="#" class="button button-rounded ls0 t600 ml-0 mb-2 nott px-4" style="background-color: #ffc19d">Sign Up</a><br>
+                    <small class="font-italic text-black-50">Don't worry, it's totally free.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="container clearfix">
+
+      <!-- Features
+      ============================================= -->
+      <div class="row topmargin clearfix justify-content-md-center">
+        <div class="col-lg-7">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature-box fbox-small fbox-plain">
+                <div class="fbox-icon">
+                  <a href="#"><i class="icon-line2-present text-dark text-dark"></i></a>
+                </div>
+                <h3 class="t400">100% Original</h3>
+                <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mt-4 mt-sm-0">
+              <div class="feature-box fbox-small fbox-plain">
+                <div class="fbox-icon">
+                  <a href="#"><i class="icon-line2-globe text-dark"></i></a>
+                </div>
+                <h3 class="t400">Free Shipping</h3>
+                <p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mt-4">
+              <div class="feature-box fbox-small fbox-plain">
+                <div class="fbox-icon">
+                  <a href="#"><i class="icon-line2-reload text-dark"></i></a>
+                </div>
+                <h3 class="t400">30-Days Returns</h3>
+                <p>You have complete easy control on each &amp; every element that provides endless customization possibilities.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mt-4">
+              <div class="feature-box fbox-small fbox-plain">
+                <div class="fbox-icon">
+                  <a href="#"><i class="icon-line2-wallet text-dark"></i></a>
+                </div>
+                <h3 class="t400">Payment Options</h3>
+                <p>We accept Visa, MasterCard and American Express. And We also Deliver by COD(only in US)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="clear"></div>
+
+      <!-- Brands
+      ============================================= -->
+      <div class="row mt-5 clearfix">
+        <div class="col-12">
+          <div class="fancy-title title-dotted-border title-center mb-4">
+            <h4>Our partners</h4>
+          </div>
+
+          <ul class="clients-grid grid-8 nobottommargin clearfix">
+            <li><a href="#"><%= image_tag 'clients/logo/whiskas.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/felix.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/thp.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/purina.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/blackcat.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/hills.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/shelba.png', alt: 'Clients' %></a></li>
+            <li><a href="#"><%= image_tag 'clients/logo/friskies.png', alt: 'Clients' %></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="clear"></div>
+
+    <!-- Last Section
+    ============================================= -->
+    <div class="section footer-stick bg-white nomargin py-3 border-bottom">
+      <div class="container clearfix">
+
+        <div class="row clearfix">
+          <div class="col-lg-4 col-md-6">
+            <div class="shop-footer-features mb-3 mb-lg-3"><i class="icon-line2-globe-alt"></i><h5 class="inline-block mb-0 ml-2 t600"><a href="#">Free Shipping</a><span class="t400 text-muted"> &amp; Easy Returns</span></h5></div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="shop-footer-features mb-3 mb-lg-3"><i class="icon-line2-notebook"></i><h5 class="inline-block mb-0 ml-2"><a href="#">Geniune Products</a><span class="t400 text-muted"> Guaranteed</span></h5></div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="shop-footer-features mb-3 mb-lg-3"><i class="icon-line2-lock"></i><h5 class="inline-block mb-0 ml-2"><a href="#">256-Bit</a> <span class="t400 text-muted">Secured Checkouts</span></h5></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- #content end -->
+
+<!--
+
 <h1>Items</h1>
 
 <table>
@@ -35,6 +696,8 @@
 
 <br>
 
-  <% if current_user && current_user.admin %>
+<% if current_user && current_user.admin %>
   <%= link_to 'New Item', new_item_path %>
-  <%end%>
+<% end %>
+
+-->

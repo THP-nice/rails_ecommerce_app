@@ -13,6 +13,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require plugins
+//= require functions
 //= require_tree .
 
 // Flash limité à 3 secondes
@@ -21,6 +24,6 @@ document.addEventListener("turbolinks:load", function(){
   if(notification) {
     window.setTimeout(function() {
       notification.style.display = "none";
-    }, 5000);
+    }, 3000);
   }
 });

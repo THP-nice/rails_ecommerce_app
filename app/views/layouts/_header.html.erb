@@ -1,0 +1,102 @@
+<!-- Header
+============================================= -->
+<header id="header" class="full-header clearfix">
+
+  <div id="header-wrap">
+
+    <div class="container clearfix">
+
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+      <!-- Logo
+      ============================================= -->
+      <div id="logo">
+        <a href="/" class="standard-logo"><%= image_tag 'meowy.png', alt: 'Meowy Logo' %></a>
+        <a href="/" class="retina-logo"><%= image_tag 'meowy@2x.png', alt: 'Meowy Logo' %></a>
+      </div><!-- #logo end -->
+
+      <!-- Primary Navigation
+      ============================================= -->
+      <nav id="primary-menu" class="style-2 with-arrows">
+
+        <ul>
+          <li class="current"><a href="/"><div>Home</div></a></li>
+          <li><a href="#"><div>Shop</div></a></li>
+          <li><a href="#"><div>About</div></a></li>
+          <li><a href="#"><div>Contact</div></a></li>
+        </ul>
+
+        <!-- Top Search
+        ============================================= -->
+        <div id="top-search">
+          <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
+          <form action="search.html" method="get">
+            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+          </form>
+        </div><!-- #top-search end -->
+
+        <!-- Top Cart
+        ============================================= -->
+        <div id="top-cart">
+          <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span>5</span></a>
+          <div class="top-cart-content">
+            <div class="top-cart-title">
+              <h4>Shopping Cart</h4>
+            </div>
+            <div class="top-cart-items">
+              <div class="top-cart-item clearfix">
+                <div class="top-cart-item-image">
+                  <a href="#"><%= image_tag 'items/featured/5.jpg', alt: 'Blue Shoulder Bag' %></a>
+                </div>
+                <div class="top-cart-item-desc">
+                  <a href="#" class="t400">White athletic shoe</a>
+                  <span class="top-cart-item-price">$35.00</span>
+                  <span class="top-cart-item-quantity t600">x 1</span>
+                </div>
+              </div>
+              <div class="top-cart-item clearfix">
+                <div class="top-cart-item-image">
+                  <a href="#" class="t400"><%= image_tag 'items/featured/1.jpg', alt: 'Leather Bag' %></a>
+                </div>
+                <div class="top-cart-item-desc">
+                  <a href="#" class="t400">Round Neck Solid Light Blue Colour T-shirts</a>
+                  <span class="top-cart-item-price">$12.49</span>
+                  <span class="top-cart-item-quantity t600">x 2</span>
+                </div>
+              </div>
+            </div>
+            <div class="top-cart-action clearfix">
+              <span class="fleft top-checkout-price t600 text-dark">$59.98</span>
+              <button class="button button-dark button-small nomargin fright">View Cart</button>
+            </div>
+          </div>
+        </div><!-- #top-cart end -->
+
+        <!-- Top Search
+        ============================================= -->
+
+        <% if user_signed_in? %>
+          <div id="top-account">
+          <div class="navbar-item has-dropdown is-hoverable d-none d-sm-inline-block font-primary t500">
+            <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+            <div class="navbar-dropdown is-right">
+              <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+            </div>
+          </div>
+          </div>
+        <% else %>
+          <div id="top-account">
+            <a href="#modal-register" data-lightbox="inline" ><i class="icon-line2-user mr-1 position-relative" style="top: 1px;"></i><span class="d-none d-sm-inline-block font-primary t500">Login</span></a>
+            <span class="d-none d-sm-inline-block font-primary t500" style="padding: 0 10px;">|</span>
+            <%= link_to 'Sign up', new_user_registration_path, class: "d-none d-sm-inline-block font-primary t500" %>
+          </div><!-- #top-search end -->
+        <% end %>
+
+      </nav><!-- #primary-menu end -->
+
+    </div>
+
+  </div>
+
+</header><!-- #header end -->

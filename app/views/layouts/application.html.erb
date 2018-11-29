@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield :title %></title>
-    <%= csrf_meta_tags %>
+<html dir="ltr" lang="en-US">
+	<head>
+		<title><%= yield :title %></title>
+		<%= csrf_meta_tags %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="author" content="SemiColonWeb" />
 
-  <body class="<%= yield (:body_class) %>">
-    <%= render 'layouts/flash' %>
-    <%= render 'layouts/navbar' %>
+		<!-- Stylesheets
+		============================================= -->
+		<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7CMontserrat:300,400,500,600,700%7CMerriweather:300,400,300i,400i" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="php/colors.php?color=000000" type="text/css" />
+	</head>
 
-  <%= yield(:header) %>
+	<body class="stretched">
 
-  <div class="container">
+		<!-- Document Wrapper
+		============================================= -->
+		<div id="wrapper" class="clearfix">
 
-    <%= yield %>
+			<%= render 'layouts/flash' %>
+			<%= render 'layouts/login_modal', resource: User.new, resource_name: :user, devise_mapping: Devise.mappings[:user] %>
+			<%= render 'layouts/header' %>
 
-  </div>
+			<%= yield %>
 
-  </body>
+			<%= render 'layouts/footer' %>
 
+		</div><!-- #wrapper end -->
+		<%= javascript_include_tag 'application' %>
+	</body>
 </html>
