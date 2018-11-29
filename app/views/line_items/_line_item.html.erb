@@ -1,6 +1,6 @@
 <div>
   <div>
-    <%= line_item.quantity %>
+    Quantity : <%= line_item.quantity %>
   </div>
   <div>
     <% if line_item.item.image.attached? %>
@@ -15,11 +15,7 @@
     <%= truncate(line_item.item.description, length: 100) %>
   </div>
   <div>
-    <%= number_to_currency(line_item.total_price) %>
+    <%= number_to_currency(line_item.item.price) %>
   </div>
-
-<div>
-<%= link_to 'Remove le kitten', line_item, method: :delete, data: { confirm: "Sure ?"} %>
-</div>
 
 <hr/>

@@ -1,14 +1,20 @@
 <% content_for :title do %>
-My cart
+Kitten | My order
 <% end %>
-<p>
-  <strong>Item:</strong>
-  <%= @line_item.item %>
-</p>
-
-<p>
-  <strong>Cart:</strong>
-  <%= @line_item.cart %>
-</p>
-
-<%= link_to 'Back', line_items_path %>
+<% if current_user.id == @line_item.cart.user_id %>
+<section>
+<hr/>
+<%= render(@line_item) %>
+<div class="columns">
+  <div class="column">
+    <%= render :partial => 'charges/new' %>
+  </div>
+  <div class="column total">
+    <h4>
+      <span>Total :</span> <%= number_to_currency(@line_item.total_price)%>
+    </h4>
+  </div>
+</section>
+<% else %>
+<%flash[:alert] = "Nope"%>
+<% end %>

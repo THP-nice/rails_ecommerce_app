@@ -5,14 +5,11 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: <%=  %></span>
-    </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Cart"
-          data-amount="<%= @cart.line_items.count %>"
+          data-description="Order"
+          data-amount="<%= (@line_item.total_price)*100%>"
           data-locale="auto"></script>
 <% end %>
