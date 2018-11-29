@@ -11,7 +11,7 @@ require 'faker'
 26.times do
   Item.create(
     title:Faker::Cat.breed,
-    description:Faker::Lorem.paragraph(10),
+    description:Faker::Lorem.paragraph(30),
     price:Faker::Number.number(2),
   )
 end
