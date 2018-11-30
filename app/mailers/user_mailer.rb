@@ -2,6 +2,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
+    @item = Item.first
    mail(
      from: 'THP.niceteam@gmail.com',
      to: user.email,

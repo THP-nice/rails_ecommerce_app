@@ -4,6 +4,7 @@ class ChargesController < ApplicationController
   end
 
   def create
+    @item = Item.first
     @user = current_user
     @line_item = current_user.cart
     # Amount in cents

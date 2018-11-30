@@ -1,3 +1,6 @@
 <h3> Well done, here a cat for you <%= @user.name%> </h3>
 <p> Happy of this ? </p>
+<% if @item.image.attached? %>
+  <%= image_tag @item.image %>
+<% end %>
 <p> You'll get it soon, hope to see you back ! ;) </p>
